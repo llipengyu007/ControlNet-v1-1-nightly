@@ -373,4 +373,4 @@ with block:
     run_button.click(fn=color_shuffler, inputs=[input_image, resolution], outputs=[gallery])
 
 
-block.launch(server_name='0.0.0.0')
+block.launch(share=True, server_name="0.0.0.0", server_port=7868)

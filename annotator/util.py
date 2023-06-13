@@ -6,7 +6,7 @@ import os
 
 
 annotator_ckpts_path = os.path.join(os.path.dirname(__file__), 'ckpts')
-
+annotator_ckpts_path = "/home/Rhossolas.Lee/.cache/huggingface/download_lee/lllyasviel/Annotators/"
 
 def HWC3(x):
     assert x.dtype == np.uint8
