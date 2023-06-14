@@ -78,3 +78,5 @@ model:
 
     cond_stage_config:
       target: ldm.modules.encoders.modules.FrozenCLIPEmbedder
+      params:
+        version: /home/Rhossolas.Lee/.cache/huggingface/download_lee/openai/clip-vit-large-patch14

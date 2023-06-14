@@ -19,8 +19,8 @@ preprocessor = None
 
 model_name = 'control_v11p_sd15_lineart'
 model = create_model(f'./models/{model_name}.yaml').cpu()
-model.load_state_dict(load_state_dict('./models/v1-5-pruned.ckpt', location='cuda'), strict=False)
-model.load_state_dict(load_state_dict(f'./models/{model_name}.pth', location='cuda'), strict=False)
+model.load_state_dict(load_state_dict('./models/ckpts/v1-5-pruned.ckpt', location='cuda'), strict=False)
+model.load_state_dict(load_state_dict(f'./models/ckpts/{model_name}.pth', location='cuda'), strict=False)
 model = model.cuda()
 ddim_sampler = DDIMSampler(model)
 
@@ -109,4 +109,4 @@ with block:
     run_button.click(fn=process, inputs=ips, outputs=[result_gallery])
 
 
-block.launch(server_name='0.0.0.0')
+block.launch(share=True, server_name="0.0.0.0", server_port=7868)
