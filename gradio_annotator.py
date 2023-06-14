@@ -317,16 +317,16 @@ with block:
             gallery = gr.Gallery(label="Generated images", show_label=False).style(height="auto")
     run_button.click(fn=lineart, inputs=[input_image, resolution, coarse], outputs=[gallery])
 
-    with gr.Row():
-        gr.Markdown("## Uniformer Segmentation")
-    with gr.Row():
-        with gr.Column():
-            input_image = gr.Image(source='upload', type="numpy")
-            resolution = gr.Slider(label="resolution", minimum=256, maximum=1024, value=512, step=64)
-            run_button = gr.Button(label="Run")
-        with gr.Column():
-            gallery = gr.Gallery(label="Generated images", show_label=False).style(height="auto")
-    run_button.click(fn=uniformer, inputs=[input_image, resolution], outputs=[gallery])
+    # with gr.Row():
+    #     gr.Markdown("## Uniformer Segmentation")
+    # with gr.Row():
+    #     with gr.Column():
+    #         input_image = gr.Image(source='upload', type="numpy")
+    #         resolution = gr.Slider(label="resolution", minimum=256, maximum=1024, value=512, step=64)
+    #         run_button = gr.Button(label="Run")
+    #     with gr.Column():
+    #         gallery = gr.Gallery(label="Generated images", show_label=False).style(height="auto")
+    # run_button.click(fn=uniformer, inputs=[input_image, resolution], outputs=[gallery])
 
     with gr.Row():
         gr.Markdown("## Oneformer COCO Segmentation")
