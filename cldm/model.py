@@ -6,7 +6,14 @@ from ldm.util import instantiate_from_config
 
 
 def get_state_dict(d):
-    return d.get('state_dict', d)
+    ckpt_dict = d.get('state_dict', d)
+
+    # for key in ckpt_dict.keys():
+    #     shape = list(ckpt_dict[key].shape)
+    #     if len(shape) == 2 and key.find("proj_") >= 0:
+    #         ckpt_dict[key] = ckpt_dict[key].unsqueeze(2).unsqueeze(3)
+    return ckpt_dict
+    # return d.get('state_dict', d)
 
 
 def load_state_dict(ckpt_path, location='cpu'):
